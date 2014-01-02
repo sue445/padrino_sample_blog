@@ -1,5 +1,5 @@
 SampleBlog::Admin.controllers :posts do
-  get :index do
+  get :index, provides: [:html, :rss, :atom] do
     @title = "Posts"
     @posts = Post.all
     render 'posts/index'
